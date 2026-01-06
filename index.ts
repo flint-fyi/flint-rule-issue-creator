@@ -30,6 +30,7 @@ for (const rule of rulesToImplement) {
     await octokit.rest.issues.create({
       body: createIssueBody(rule),
       labels: [
+        "ai assigned",
         `plugin: ${rule.flint.plugin}`,
         "status: accepting prs",
         "type: feature",
