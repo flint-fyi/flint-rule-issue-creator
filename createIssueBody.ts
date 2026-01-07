@@ -27,7 +27,7 @@ Adding this rule will entail creating the following new source files:
 
 Additionally, the following files will need to be edited:
 
-* \`packages/comparisons/src/data.json\`: Comparisons data in  will need to mention the rule is now \`implemented: true\`
+* \`packages/comparisons/src/data.json\`: Comparisons data will need to mention the rule is now \`"status": "implemented"\`
 * \`packages/${plugin}/src/plugin.ts\`: Included rules should have the new one inserted in alphabetical order
 
 ### Additional Info
