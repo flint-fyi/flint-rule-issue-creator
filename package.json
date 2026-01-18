@@ -3,8 +3,7 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@flint.fyi/comparisons": "^0.1.4",
-    "eslint": "^9.39.2",
+    "@flint.fyi/comparisons": "^0.2.0",
     "execa": "^9.6.1",
     "octokit-from-auth": "^0.3.2"
   },
