@@ -23,6 +23,8 @@ async function doesRuleHaveIssue(comparison: Comparison, octokit: Octokit) {
     order: "desc",
   });
 
+  await new Promise((resolve) => setTimeout(resolve, 3500));
+
   const result = !!response.data.items.length;
 
   await writeCached(comparison.flint.name, result);
@@ -32,7 +34,7 @@ async function doesRuleHaveIssue(comparison: Comparison, octokit: Octokit) {
 
 export async function* iterateRulesToImplement(
   octokit: Octokit,
-  strategy: Strategy
+  strategy: Strategy,
 ) {
   const candidates = await (strategy.kind === "by-size"
     ? getESLintRulesBySize()
@@ -42,12 +44,12 @@ export async function* iterateRulesToImplement(
     console.log(
       styleText(
         "gray",
-        `Checking for existing issue on ${candidate.flint.name}...`
-      )
+        `Checking for existing issue on ${candidate.flint.name}...`,
+      ),
     );
     if (await doesRuleHaveIssue(candidate, octokit)) {
       console.log(
-        styleText("gray", `\t${candidate.flint.name} issue already exists.`)
+        styleText("gray", `\t${candidate.flint.name} issue already exists.`),
       );
     } else {
       console.log(styleText("gray", `\tYielding ${candidate.flint.name}.`));

@@ -6,6 +6,6 @@ export async function getESLintRulesInPlugin(strategy: InPluginStrategy) {
   return comparisons.filter(
     (comparison) =>
       comparison.flint.plugin === strategy.plugin &&
-      comparison.flint.preset !== "Not implementing"
+      comparison.flint.status !== "skipped"
   );
 }

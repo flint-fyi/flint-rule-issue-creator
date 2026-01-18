@@ -10,7 +10,7 @@ import { writeCached } from "./cache.ts";
 
 const goLive = !!process.env.GO_LIVE;
 
-const issuesToCreate = 15;
+const issuesToCreate = 50;
 
 const strategy = {
   kind: "in-plugin",
