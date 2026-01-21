@@ -3,7 +3,7 @@ import * as path from "node:path";
 
 type RulesCache = Record<string, boolean>;
 
-const cacheFilePath = "node_modules/.cache/flint-issue-creator.json";
+const cacheFilePath = "node_modules/.cache/flint-rule-issue-creator.json";
 const cacheDirectory = path.dirname(cacheFilePath);
 
 async function readCache() {
