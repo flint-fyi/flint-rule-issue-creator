@@ -26,7 +26,10 @@ const rulesToImplement = await takeAsync(
 
 for (const rule of rulesToImplement) {
   if (!goLive) {
-    console.log(rule);
+    console.log(
+      `${styleText("cyan", rule.flint.plugin)}/${styleText("blue", rule.flint.name)}`,
+      styleText("gray", `(${rule.flint.preset})`),
+    );
     continue;
   }
 
